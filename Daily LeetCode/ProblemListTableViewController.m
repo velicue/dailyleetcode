@@ -27,6 +27,7 @@
 }
 
 - (void)receiveResponseObject:(id)responseObject forAPIAddr:(NSString *)APIAddr {
+    self.data = [[NSUserDefaults standardUserDefaults] objectForKey:@"problems"];
     NSMutableArray *tempData = [((NSDictionary *)responseObject)[@"result"] mutableCopy];
     for (int i = 0; i < [tempData count]; i++) {
         tempData[i] = [tempData[i] mutableCopy];

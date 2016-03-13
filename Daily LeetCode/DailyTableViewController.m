@@ -15,7 +15,7 @@
 
 @interface DailyTableViewController ()
 
-@property NSArray *data;
+@property NSMutableArray *data;
 @property NSNumber *problemId;
 
 @end
@@ -52,14 +52,15 @@
     
     NSInteger problemsPerDay = 3;
     
-    //NSMutableArray *history = [[[NSUserDefaults standardUserDefaults] objectForKey:@"history"] mutableCopy];
-    NSMutableArray *history = [[NSMutableArray alloc] init];
+    NSMutableArray *history = [[[NSUserDefaults standardUserDefaults] objectForKey:@"history"] mutableCopy];
+    //NSMutableArray *history = [[NSMutableArray alloc] init];
     if ([history count] == 0 || ![self isToday: history[[history count] - 1][@"date"]]) {
         if ([history count] == 0) history = [[NSMutableArray alloc] init];
         NSMutableDictionary *historyToday = [[NSMutableDictionary alloc] init];
         [historyToday setObject:[NSDate date] forKey:@"date"];
         NSMutableArray *todayProblems = [[NSMutableArray alloc] init];
         NSMutableArray *problemList = [[[NSUserDefaults standardUserDefaults] objectForKey:@"problems"] mutableCopy];
+        if ([problemList count] == 0) return;
         NSMutableArray *problemsAvailable = [[NSMutableArray alloc] init];
         for (int i = 0; i < [problemList count]; i++) {
             if ([problemList[i][@"status"] integerValue] == 4) {
@@ -92,9 +93,24 @@
         [[NSUserDefaults standardUserDefaults] setObject:problemList forKey:@"problems"];
         historyToday[@"problems"] = todayProblems;
         [history addObject:historyToday];
-        [[NSUserDefaults standardUserDefaults] setObject:history forKey:@"history"];
     }
-    self.data = history[[history count] - 1][@"problems"];
+    NSMutableArray *problemList = [[[NSUserDefaults standardUserDefaults] objectForKey:@"problems"] mutableCopy];
+    
+    self.data = [[NSMutableArray alloc] init];
+    NSMutableArray *todayProblems = [history[[history count] - 1][@"problems"] mutableCopy];
+    for (int i = 0; i < [todayProblems count]; i++) {
+        for (int j = 0; j < [problemList count]; j++) {
+            if (todayProblems[i][@"problem_id"] == problemList[j][@"problem_id"]) {
+                todayProblems[i] = [problemList[j] mutableCopy];
+                break;
+            }
+        }
+        if ([todayProblems[i][@"status"] integerValue] == 1 || [todayProblems[i][@"status"] integerValue] == 2)
+            [self.data addObject:todayProblems[i]];
+    }
+    history[[history count] - 1] = [history[[history count] - 1] mutableCopy];
+    history[[history count] - 1][@"problems"] = todayProblems;
+    [[NSUserDefaults standardUserDefaults] setObject:history forKey:@"history"];
     [self.tableView reloadData];
     [self.tableView beginUpdates];
     [self.tableView endUpdates];
@@ -109,7 +125,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return [self.data count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

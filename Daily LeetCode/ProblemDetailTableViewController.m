@@ -10,6 +10,7 @@
 #import "ProblemListTableViewCell.h"
 #import "DailyDescriptionTableViewCell.h"
 #import "ProblemActionTableViewCell.h"
+#include "stdlib.h"
 
 @interface ProblemDetailTableViewController ()
 
@@ -51,7 +52,7 @@
     if (section == 0) return 2;
     else if (section == 1) {
         if ([self.data[@"status"] integerValue] == 1) {
-            //Revert to Unseen
+            //Revert to Unseen / Mark as Seen
             //Mark as Done
             //Mark as Hard
             //Mark as Postponed
@@ -97,10 +98,16 @@
         }
     } else if (indexPath.section == 1) {
         ProblemActionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"problemActionTableViewCell" forIndexPath:indexPath];
-        if (indexPath.row == 0) cell.actionLabel.text = @"Mark this problem as 'Unseen'";
-        if (indexPath.row == 1) cell.actionLabel.text = @"Mark this problem as 'Done'";
-        if (indexPath.row == 2) cell.actionLabel.text = @"Mark this problem as 'Hard' and have a new one";
-        if (indexPath.row == 3) cell.actionLabel.text = @"Mark this problem as 'Postponed' and have a new one";
+       
+        
+        if ([self.data[@"status"] integerValue] != 1) {
+            if (indexPath.row == 0) cell.actionLabel.text = @"Mark this problem as 'Unseen'";
+        } else {
+            if (indexPath.row == 1) cell.actionLabel.text = @"Mark this problem as 'Seen' and have a new one";
+            if (indexPath.row == 0) cell.actionLabel.text = @"Mark this problem as 'Done'";
+            if (indexPath.row == 2) cell.actionLabel.text = @"Mark this problem as 'Hard' and have a new one";
+            if (indexPath.row == 3) cell.actionLabel.text = @"Mark this problem as 'Postponed' and have a new one";
+        }
         return cell;
     } else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"problemLinkTableViewCell" forIndexPath:indexPath];
@@ -123,6 +130,69 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 1) {
+        NSMutableArray *problemList = [[[NSUserDefaults standardUserDefaults] objectForKey:@"problems"] mutableCopy];
+        int index = -1;
+        for (int i = 0; i < [problemList count]; i++) {
+            if ([problemList[i][@"problem_id"] integerValue] == [self.problemId integerValue]) {
+                index = i;
+            }
+        }
+        if ([self.data[@"status"] integerValue] != 1) {
+            problemList[index] = [problemList[index] mutableCopy];
+            problemList[index][@"status"] = [NSNumber numberWithInt:0];
+            [[NSUserDefaults standardUserDefaults] setObject:problemList forKey:@"problems"];
+        } else {
+            if (indexPath.row == 0) {
+                problemList[index] = [problemList[index] mutableCopy];
+                problemList[index][@"status"] = [NSNumber numberWithInt:2];
+            }
+            if (indexPath.row == 1) {
+                problemList[index] = [problemList[index] mutableCopy];
+                problemList[index][@"status"] = [NSNumber numberWithInt:3];
+            }
+            if (indexPath.row == 2) {
+                problemList[index] = [problemList[index] mutableCopy];
+                problemList[index][@"status"] = [NSNumber numberWithInt:5];
+            }
+            if (indexPath.row == 3) {
+                problemList[index] = [problemList[index] mutableCopy];
+                problemList[index][@"status"] = [NSNumber numberWithInt:4];
+            }
+            if (indexPath.row != 0) {
+                NSMutableArray *problemsAvailable = [[NSMutableArray alloc] init];
+                for (int i = 0; i < [problemList count]; i++) {
+                    if (i == index) continue;
+                    if ([problemList[i][@"status"] integerValue] == 0 || [problemList[i][@"status"] integerValue] == 5) {
+                        problemList[i] = [problemList[i] mutableCopy];
+                        [problemsAvailable addObject:problemList[i]];
+                    }
+                }
+                NSMutableArray *history = [[[NSUserDefaults standardUserDefaults] objectForKey:@"history"] mutableCopy];
+                NSMutableArray *todayProblems = [history[[history count] - 1][@"problems"] mutableCopy];
+                int newindex = arc4random_uniform([problemsAvailable count]);
+                problemsAvailable[newindex][@"status"] = [NSNumber numberWithInt:1];
+                [todayProblems addObject:problemsAvailable[newindex]];
+                for (int i = 0; i < [problemList count]; i++) {
+                    if (problemList[i][@"problem_id"] == problemsAvailable[newindex][@"problem_id"]) {
+                        problemList[i] = [problemList[i] mutableCopy];
+                        problemList[i][@"status"] = [NSNumber numberWithInt:1];
+                    }
+                }
+                
+                history[[history count] - 1] = [history[[history count] - 1] mutableCopy];
+                history[[history count] - 1][@"problems"] = todayProblems;
+                [[NSUserDefaults standardUserDefaults] setObject:history forKey:@"history"];
+            }
+            [[NSUserDefaults standardUserDefaults] setObject:problemList forKey:@"problems"];
+        }
+        [self.navigationController popViewControllerAnimated:YES];
+    } else if (indexPath.section == 2) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://www.leetcode.com%@", (NSString *)self.data[@"uri"]]]];
+    }
+}
 
 
 /*
