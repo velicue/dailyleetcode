@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		385E9EDD1C94FE1400FE0B53 /* ProblemActionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 385E9EDC1C94FE1400FE0B53 /* ProblemActionTableViewCell.m */; };
+		385E9EE01C94FE5200FE0B53 /* ProblemDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 385E9EDF1C94FE5200FE0B53 /* ProblemDetailTableViewController.m */; };
 		389D2F5E1C910427001463E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 389D2F5D1C910427001463E5 /* main.m */; };
 		389D2F611C910427001463E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 389D2F601C910427001463E5 /* AppDelegate.m */; };
 		389D2F641C910427001463E5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 389D2F631C910427001463E5 /* ViewController.m */; };
@@ -15,6 +17,12 @@
 		389D2F6C1C910427001463E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 389D2F6A1C910427001463E5 /* LaunchScreen.storyboard */; };
 		389D2F771C910427001463E5 /* Daily_LeetCodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 389D2F761C910427001463E5 /* Daily_LeetCodeTests.m */; };
 		389D2F821C910427001463E5 /* Daily_LeetCodeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 389D2F811C910427001463E5 /* Daily_LeetCodeUITests.m */; };
+		389D2F911C910BD5001463E5 /* ProblemListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 389D2F901C910BD5001463E5 /* ProblemListTableViewController.m */; };
+		389D2F941C910BE7001463E5 /* ProblemListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 389D2F931C910BE7001463E5 /* ProblemListTableViewCell.m */; };
+		389D2F971C91F74E001463E5 /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = 389D2F961C91F74E001463E5 /* Client.m */; };
+		38D7A1C21C94CA1E005501F1 /* DailyDescriptionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D7A1C11C94CA1E005501F1 /* DailyDescriptionTableViewCell.m */; };
+		38D7A1C51C94CC4A005501F1 /* DailyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38D7A1C41C94CC4A005501F1 /* DailyTableViewController.m */; };
+		712F28F1B5B2F9EB48179AB3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 596A7B4A366DE9D839E9CE89 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +43,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D0EDC9290285F8848B97AA7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		155507D57DD4B918203FC239 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		385E9EDB1C94FE1400FE0B53 /* ProblemActionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemActionTableViewCell.h; sourceTree = "<group>"; };
+		385E9EDC1C94FE1400FE0B53 /* ProblemActionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemActionTableViewCell.m; sourceTree = "<group>"; };
+		385E9EDE1C94FE5200FE0B53 /* ProblemDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemDetailTableViewController.h; sourceTree = "<group>"; };
+		385E9EDF1C94FE5200FE0B53 /* ProblemDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemDetailTableViewController.m; sourceTree = "<group>"; };
 		389D2F591C910427001463E5 /* Daily LeetCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily LeetCode.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		389D2F5D1C910427001463E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		389D2F5F1C910427001463E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +65,18 @@
 		389D2F7D1C910427001463E5 /* Daily LeetCodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Daily LeetCodeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		389D2F811C910427001463E5 /* Daily_LeetCodeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Daily_LeetCodeUITests.m; sourceTree = "<group>"; };
 		389D2F831C910427001463E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		389D2F8F1C910BD5001463E5 /* ProblemListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemListTableViewController.h; sourceTree = "<group>"; };
+		389D2F901C910BD5001463E5 /* ProblemListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemListTableViewController.m; sourceTree = "<group>"; };
+		389D2F921C910BE7001463E5 /* ProblemListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemListTableViewCell.h; sourceTree = "<group>"; };
+		389D2F931C910BE7001463E5 /* ProblemListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemListTableViewCell.m; sourceTree = "<group>"; };
+		389D2F951C91F74E001463E5 /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
+		389D2F961C91F74E001463E5 /* Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Client.m; sourceTree = "<group>"; };
+		389D2F981C91FBA5001463E5 /* ClientDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClientDelegate.h; sourceTree = "<group>"; };
+		38D7A1C01C94CA1E005501F1 /* DailyDescriptionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyDescriptionTableViewCell.h; sourceTree = "<group>"; };
+		38D7A1C11C94CA1E005501F1 /* DailyDescriptionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyDescriptionTableViewCell.m; sourceTree = "<group>"; };
+		38D7A1C31C94CC4A005501F1 /* DailyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyTableViewController.h; sourceTree = "<group>"; };
+		38D7A1C41C94CC4A005501F1 /* DailyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyTableViewController.m; sourceTree = "<group>"; };
+		596A7B4A366DE9D839E9CE89 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				712F28F1B5B2F9EB48179AB3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30E84C5289D324BA29AF3481 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				596A7B4A366DE9D839E9CE89 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		389D2F501C910427001463E5 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +120,8 @@
 				389D2F751C910427001463E5 /* Daily LeetCodeTests */,
 				389D2F801C910427001463E5 /* Daily LeetCodeUITests */,
 				389D2F5A1C910427001463E5 /* Products */,
+				562A72B6721401E19613B47B /* Pods */,
+				30E84C5289D324BA29AF3481 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,10 +143,25 @@
 				389D2F621C910427001463E5 /* ViewController.h */,
 				389D2F631C910427001463E5 /* ViewController.m */,
 				389D2F651C910427001463E5 /* Main.storyboard */,
+				385E9EDB1C94FE1400FE0B53 /* ProblemActionTableViewCell.h */,
+				385E9EDC1C94FE1400FE0B53 /* ProblemActionTableViewCell.m */,
+				385E9EDE1C94FE5200FE0B53 /* ProblemDetailTableViewController.h */,
+				385E9EDF1C94FE5200FE0B53 /* ProblemDetailTableViewController.m */,
+				38D7A1C01C94CA1E005501F1 /* DailyDescriptionTableViewCell.h */,
+				38D7A1C11C94CA1E005501F1 /* DailyDescriptionTableViewCell.m */,
+				38D7A1C31C94CC4A005501F1 /* DailyTableViewController.h */,
+				38D7A1C41C94CC4A005501F1 /* DailyTableViewController.m */,
+				389D2F921C910BE7001463E5 /* ProblemListTableViewCell.h */,
+				389D2F931C910BE7001463E5 /* ProblemListTableViewCell.m */,
+				389D2F8F1C910BD5001463E5 /* ProblemListTableViewController.h */,
+				389D2F901C910BD5001463E5 /* ProblemListTableViewController.m */,
 				389D2F681C910427001463E5 /* Assets.xcassets */,
 				389D2F6A1C910427001463E5 /* LaunchScreen.storyboard */,
 				389D2F6D1C910427001463E5 /* Info.plist */,
 				389D2F5C1C910427001463E5 /* Supporting Files */,
+				389D2F951C91F74E001463E5 /* Client.h */,
+				389D2F981C91FBA5001463E5 /* ClientDelegate.h */,
+				389D2F961C91F74E001463E5 /* Client.m */,
 			);
 			path = "Daily LeetCode";
 			sourceTree = "<group>";
@@ -140,6 +192,15 @@
 			path = "Daily LeetCodeUITests";
 			sourceTree = "<group>";
 		};
+		562A72B6721401E19613B47B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D0EDC9290285F8848B97AA7 /* Pods.debug.xcconfig */,
+				155507D57DD4B918203FC239 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +208,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 389D2F861C910427001463E5 /* Build configuration list for PBXNativeTarget "Daily LeetCode" */;
 			buildPhases = (
+				A20E1607FF321B97BE084917 /* Check Pods Manifest.lock */,
 				389D2F551C910427001463E5 /* Sources */,
 				389D2F561C910427001463E5 /* Frameworks */,
 				389D2F571C910427001463E5 /* Resources */,
+				E0A66FAB548011ECFCC076CE /* Embed Pods Frameworks */,
+				C8E68870ED5DD776499B68EC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,14 +332,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A20E1607FF321B97BE084917 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C8E68870ED5DD776499B68EC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0A66FAB548011ECFCC076CE /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		389D2F551C910427001463E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				385E9EE01C94FE5200FE0B53 /* ProblemDetailTableViewController.m in Sources */,
 				389D2F641C910427001463E5 /* ViewController.m in Sources */,
+				385E9EDD1C94FE1400FE0B53 /* ProblemActionTableViewCell.m in Sources */,
 				389D2F611C910427001463E5 /* AppDelegate.m in Sources */,
+				38D7A1C21C94CA1E005501F1 /* DailyDescriptionTableViewCell.m in Sources */,
+				389D2F971C91F74E001463E5 /* Client.m in Sources */,
+				389D2F941C910BE7001463E5 /* ProblemListTableViewCell.m in Sources */,
+				389D2F911C910BD5001463E5 /* ProblemListTableViewController.m in Sources */,
 				389D2F5E1C910427001463E5 /* main.m in Sources */,
+				38D7A1C51C94CC4A005501F1 /* DailyTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +533,7 @@
 		};
 		389D2F871C910427001463E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D0EDC9290285F8848B97AA7 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Daily LeetCode/Info.plist";
@@ -425,6 +545,7 @@
 		};
 		389D2F881C910427001463E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 155507D57DD4B918203FC239 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Daily LeetCode/Info.plist";
@@ -501,6 +622,7 @@
 				389D2F881C910427001463E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		389D2F891C910428001463E5 /* Build configuration list for PBXNativeTarget "Daily LeetCodeTests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +631,7 @@
 				389D2F8B1C910428001463E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		389D2F8C1C910428001463E5 /* Build configuration list for PBXNativeTarget "Daily LeetCodeUITests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +640,7 @@
 				389D2F8E1C910428001463E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
